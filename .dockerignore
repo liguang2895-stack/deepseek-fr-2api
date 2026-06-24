@@ -1,0 +1,8 @@
+.env
+__pycache__
+*.pyc
+.lrnev
+.reasonix
+uv.lock
+README.md
+.git

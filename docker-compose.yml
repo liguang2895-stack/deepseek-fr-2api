@@ -1,0 +1,10 @@
+services:
+  proxy:
+    build: .
+    ports:
+      - "127.0.0.1:9000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - PROXY_URL=
+    restart: unless-stopped

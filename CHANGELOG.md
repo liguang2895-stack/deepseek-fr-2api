@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **Vercel / Docker 部署**: 保留旧仓库的 `vercel.json`, `api/index.py`, `Dockerfile`, `docker-compose.yml`，适配新模块化结构。
+- **部署文档**: 合并旧仓库的完整部署教程（Vercel 一键部署、Docker、直接运行）。
 - **Tool Calling 后处理**: 新增 `try_parse_tool_calls()` 函数，可从模型回复中自动解析 OpenAI 兼容的 `tool_calls` JSON（支持纯 JSON、\`\`\`json 代码块、\`\`\` 代码块三种格式），非流式和流式端点均已集成。
 - **增强的 tools prompt**: `_tools_prompt()` 现在输出详细的参数 schema（类型、required 标记），并与 `build_prompt()` 深度集成。
 - **空响应检测**: 非流式和流式端点均检测上游返回空流的情况（限流/故障），返回结构化错误消息，支持客户端自动重试。
