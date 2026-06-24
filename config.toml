@@ -1,0 +1,98 @@
+[server]
+host = "0.0.0.0"
+port = 8000
+log_level = "INFO"
+
+[security]
+# 下游客户端鉴权。为空数组则不鉴权；建议实际部署时改成自己的 key。
+api_keys = ["sk-dsfr-local-change-me"]
+
+[proxy]
+# 支持 http:// / https:// / socks5://。留空则直连。
+url = ""
+
+[upstream]
+timeout = 60.0
+stream_timeout = 300.0
+config_ttl_seconds = 60
+auto_refresh = true
+refresh_retries = 4
+retry_backoff_seconds = 1.0
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+
+[turnstile]
+enabled = true
+api_url = "https://cfs.071129.xyz/turnstile/sync"
+api_key = "4SYIAfKiHo5472342799adsjbhhasvbjbesfuFu7EKfK9RPKpHk"
+sitekey = "0x4AAAAAADlLZ3ljqZP6cQwq"
+action = "chat"
+timeout_seconds = 90
+cookie_ttl_seconds = 10800
+retries = 5
+retry_backoff_seconds = 1.5
+
+[sites.de]
+base_url = "https://deepseek.de"
+ajax_url = "https://deepseek.de/wp-admin/admin-ajax.php"
+sitekey = "0x4AAAAAADlLZ3ljqZP6cQwq"
+language = "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"
+
+[sites.es]
+base_url = "https://deepseek.es"
+ajax_url = "https://deepseek.es/wp-admin/admin-ajax.php"
+sitekey = "0x4AAAAAADlLZ3ljqZP6cQwq"
+language = "es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7"
+
+[sites.fr]
+base_url = "https://deepseek.fr"
+ajax_url = "https://deepseek.fr/wp-admin/admin-ajax.php"
+sitekey = "0x4AAAAAADlLZ3ljqZP6cQwq"
+language = "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"
+
+[models.deepseek-v4-flash-de]
+site = "de"
+upstream_id = "deepseek-v4-flash"
+label = "DeepSeek V4-Flash DE"
+page_path = "/"
+bot_id = 27487
+post_id = 106
+
+[models.deepseek-v4-pro-de]
+site = "de"
+upstream_id = "deepseek-v4-pro"
+label = "DeepSeek V4-Pro DE"
+page_path = "/pro/"
+bot_id = 27533
+post_id = 27177
+
+[models.deepseek-v4-flash-es]
+site = "es"
+upstream_id = "deepseek-v4-flash"
+label = "DeepSeek V4-Flash ES"
+page_path = "/"
+bot_id = 27623
+post_id = 27568
+
+[models.deepseek-v4-pro-es]
+site = "es"
+upstream_id = "deepseek-v4-pro"
+label = "DeepSeek V4-Pro ES"
+page_path = "/pro/"
+bot_id = 27637
+post_id = 27615
+
+[models.deepseek-v4-flash-fr]
+site = "fr"
+upstream_id = "deepseek-v4-flash"
+label = "DeepSeek V4-Flash FR"
+page_path = "/"
+bot_id = 27645
+post_id = 27569
+
+[models.deepseek-v4-pro-fr]
+site = "fr"
+upstream_id = "deepseek-v4-pro"
+label = "DeepSeek V4-Pro FR"
+page_path = "/pro/"
+bot_id = 27647
+post_id = 27616

@@ -1,0 +1,15 @@
+[project]
+name = "turnstile-solver"
+version = "1.0.0"
+description = "Standalone Cloudflare Turnstile solver with verified cookie caching — works with any WordPress/AIPKit site"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0",
+    "pytest-asyncio>=1.0",
+]

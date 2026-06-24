@@ -1,0 +1,24 @@
+[project]
+name = "ds-piracy-all-in-one"
+version = "0.2.0"
+description = "OpenAI-compatible all-in-one proxy for deepseek.de/es/fr"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "curl-cffi>=0.15.0",
+    "fastapi>=0.137.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.12.0",
+    "socksio>=1.0.0",
+    "turnstile-solver",
+    "uvicorn>=0.49.0",
+]
+
+[tool.uv.sources]
+turnstile-solver = { path = "./plugins/turnstile-solver", editable = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+    "pytest-asyncio>=1.3.0",
+]

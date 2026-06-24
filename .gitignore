@@ -1,0 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# lrnev runtime state (not for version control)
+.lrnev/runtime/
+.lrnev/locks/
+.lrnev/state/
+.lrnev/auto/
