@@ -11,5 +11,6 @@ from deepseek_all_in_one.config import load_config
 config = load_config("config.toml")
 if os.environ.get("PROXY_URL"):
     config.proxy_url = os.environ["PROXY_URL"]
-
+if os.environ.get("API_KEYS"):
+    config.api_keys = [k.strip() for k in os.environ["API_KEYS"].split(",") if k.strip()]
 app = create_app(config)
